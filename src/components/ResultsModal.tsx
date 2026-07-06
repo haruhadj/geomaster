@@ -3,7 +3,7 @@ import { Trophy, RotateCcw, Share2, Target, Zap, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const ResultsModal = () => {
-  const { score, bestStreak, resetGame, missedCountries } = useGameStore();
+  const { score, bestStreak, startGame, missedCountries } = useGameStore();
 
   const handleShare = () => {
     const text = `🌍 I just scored ${score.toLocaleString()} points on GeoMaster! My best streak was ${bestStreak}. Can you beat me?`;
@@ -67,7 +67,7 @@ export const ResultsModal = () => {
 
         <div className="space-y-2 md:space-y-3">
           <button
-            onClick={resetGame}
+            onClick={startGame}
             className="w-full py-4 md:py-5 bg-white text-black font-black text-base md:text-lg rounded-xl md:rounded-2xl hover:bg-blue-500 hover:text-white transition-all flex items-center justify-center gap-2 md:gap-3"
           >
             <RotateCcw size={18} className="md:w-5 md:h-5" />
